@@ -1,0 +1,10 @@
+<!-- Search Form -->
+<div class="search-form compact">
+  <%= form_with model: Weather.new, url: weather_index_path, method: :post, data: { turbo: false }, local: true, class: "weather-form" do |form| %>
+    <div class="form-row">
+      <%= form.text_field :address, placeholder: "Enter new address", class: "form-control inline", value: @weather&.address %>
+      <%= form.text_field :zip_code, placeholder: "Or zip code", class: "form-control inline", value: @weather&.zip_code %>
+      <%= form.submit "Search", class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+</div>

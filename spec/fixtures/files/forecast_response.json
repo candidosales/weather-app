@@ -1,0 +1,24 @@
+{
+    "list": [
+        {
+            "dt": 1642680000,
+            "main": {
+                "temp": 20.5,
+                "feels_like": 19.8,
+                "temp_min": 18,
+                "temp_max": 22,
+                "pressure": 1015,
+                "humidity": 50
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "dt_txt": "2022-01-20 12:00:00"
+        }
+    ]
+}

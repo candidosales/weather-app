@@ -1,0 +1,55 @@
+<div class="weather-app">
+  <div class="container">
+    <h1 class="app-title">Weather Forecast App</h1>
+    
+    <%= render 'search_form' %>
+
+    <%= render 'flash_messages' %>
+
+    <!-- Weather Results -->
+    <div class="weather-results">
+      <div class="location-header">
+        <h2><%= @weather.location_name %></h2>
+        <% if @weather.from_cache? %>
+          <span class="cache-indicator">
+            <i class="cache-icon">⚡</i> Cached Result
+          </span>
+        <% end %>
+      </div>
+
+      <!-- Current Weather -->
+      <div class="current-weather">
+        <div class="temperature-display">
+          <span class="current-temp"><%= @weather.current_temperature&.round %>°C</span>
+          <span class="description"><%= @weather.weather_description %></span>
+        </div>
+        
+        <% if @weather.high_low_temperature %>
+          <div class="high-low">
+            <span class="high">High: <%= @weather.high_low_temperature[:high]&.round %>°C</span>
+            <span class="low">Low: <%= @weather.high_low_temperature[:low]&.round %>°C</span>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Extended Forecast -->
+      <% if @weather.extended_forecast.any? %>
+        <div class="extended-forecast">
+          <h3>5-Day Forecast</h3>
+          <div class="forecast-grid">
+            <% @weather.extended_forecast.each do |day| %>
+              <div class="forecast-day">
+                <div class="date"><%= day[:date] %></div>
+                <div class="temps">
+                  <span class="high"><%= day[:high] %>°</span>
+                  <span class="low"><%= day[:low] %>°</span>
+                </div>
+                <div class="description"><%= day[:description] %></div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
