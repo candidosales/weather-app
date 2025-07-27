@@ -7,8 +7,6 @@ class WeatherController < ApplicationController
   end
 
   def create
-    log_weather_request_start
-
     orchestrator = WeatherOrchestrator.new(weather_params)
     result = orchestrator.call
 
@@ -36,12 +34,6 @@ class WeatherController < ApplicationController
 
   def weather_params
     params.require(:weather).permit(:address, :zip_code)
-  end
-
-  def log_weather_request_start
-    location_type = weather_params[:zip_code].present? ? "zip_code" : "address"
-    location_value = weather_params[:zip_code] || weather_params[:address]
-    log_weather_request(location_type, location_value)
   end
 
   def log_weather_request_success

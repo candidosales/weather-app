@@ -2,13 +2,11 @@ class WeatherService
   include HTTParty
 
   # Using OpenWeatherMap API
-  BASE_URL = "https://api.openweathermap.org/data/2.5".freeze
   CACHE_EXPIRY = WeatherConfig.cache_expiry.freeze
-  REQUEST_TIMEOUT = WeatherConfig.request_timeout.freeze
 
   # HTTParty configuration
-  base_uri BASE_URL
-  default_timeout REQUEST_TIMEOUT
+  base_uri "https://api.openweathermap.org/data/2.5".freeze
+  default_timeout WeatherConfig.request_timeout.freeze
   headers "User-Agent" => "WeatherApp/1.0"
 
   class << self
