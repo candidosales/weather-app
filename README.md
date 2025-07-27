@@ -13,7 +13,6 @@ A modern Rails 8 weather application that provides current weather conditions an
 ## Tech Stack
 
 - **Ruby 3.4.1** with Rails 8.0.2
-- **SQLite** for data storage
 - **HTTParty** for API requests
 - **Geocoder** for address-to-coordinates conversion
 - **RSpec** for testing
@@ -23,7 +22,6 @@ A modern Rails 8 weather application that provides current weather conditions an
 
 - Ruby 3.4.1
 - Rails 8.0.2
-- SQLite3
 - OpenWeather API key
 
 ## Setup
