@@ -23,9 +23,11 @@ FactoryBot.define do
     end
 
     # Initialize the factory without calling external services
+    initialize_with { Weather.allocate.tap { |w| w.send(:initialize, attributes) } }
+
     after(:build) do |weather|
       # Prevent actual geocoding calls during tests
-      allow(weather).to receive(:geocode_address)
+      weather.instance_variable_set(:@geocoding_error, nil)
     end
   end
 end

@@ -121,7 +121,9 @@ class Weather
   end
 
   def valid_forecast_data?
-    !forecast_data[:error] || forecast_data[:current]
+    return false if forecast_data[:error]
+    return true if forecast_data[:current]
+    false
   end
 
   def geocode_address
