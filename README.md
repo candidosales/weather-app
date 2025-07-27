@@ -2,6 +2,8 @@
 
 A modern Rails 8 weather application that provides current weather conditions and 5-day forecasts for any location. Built with Ruby on Rails and integrates with OpenWeather API for real-time weather data.
 
+![image](/docs/home-printscreen.png)
+
 ## Features
 
 - 🌤️ **Current Weather**: Get real-time temperature, conditions, and high/low temperatures
