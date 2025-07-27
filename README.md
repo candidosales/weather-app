@@ -9,6 +9,7 @@ A modern Rails 8 weather application that provides current weather conditions an
 - 🔍 **Location Search**: Search by address or ZIP code with automatic geocoding
 - ⚡ **Caching**: Intelligent caching for improved performance
 - 🐳 **Docker Support**: Containerized deployment ready
+- 🧪 **CI/CD**: GitHub Actions for automated testing and deployment
 
 ## Tech Stack
 
